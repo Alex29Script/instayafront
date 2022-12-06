@@ -5,7 +5,7 @@ import CustomInput from "../../components/CustomInput/CustomInput";
 import "./Login.css";
 import {ReactSession } from 'react-client-session';
 import NavbarComp from "../../components/NavbarComp/NavbarComp";
-
+import { url_server } from "../../components/server_backend/conexion";
 
 export const Login = () => {
   const iniciarSesion = (e) => {
@@ -14,7 +14,7 @@ export const Login = () => {
     formulario.username = document.getElementById("usuario").value;
     formulario.pass = document.getElementById("contraseña").value;
     console.log(formulario);
-    fetch("http://localhost:8080/login",{
+    fetch(`${url_server}/login`,{
       headers:{"Content-Type":"application/json"},
     mode: 'cors',
     method:"post",

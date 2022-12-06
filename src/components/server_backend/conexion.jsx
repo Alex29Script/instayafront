@@ -1,3 +1,3 @@
-export const url_server="http://localhost:8080"
+export const url_server="https://instayaback-production.up.railway.app"
 
 
