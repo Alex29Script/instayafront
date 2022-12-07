@@ -9,7 +9,7 @@ export function FormAddGuia(){
     const add_guia=(event)=>{
         event.preventDefault()
         const guia={};
-        guia.username=ReactSession.get("username")
+        guia.username=sessionStorage.getItem("username")
         //guia._id=document.getElementById("id").value;
         guia.nit=document.getElementById("nit").value;
         guia.fecha=document.getElementById("fecha").value;

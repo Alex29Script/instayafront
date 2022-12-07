@@ -16,7 +16,7 @@ export  function  FormUpdate (){
         
         //http://localhost:8080/guia/buscar/?id_guia=638d6c454b3fe489b2f67f45&username=alex32api
         
-        if(user==ReactSession.get("username")){
+        if(user==sessionStorage.getItem("username")){
         fetch(`${url_server}/guia/buscar/?username=${user}&id_guia=${guia_unica}`,{
             mode: 'cors',
             method:"get",

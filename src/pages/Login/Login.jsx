@@ -36,7 +36,7 @@ export const Login = () => {
 
   const user_verification=()=>{
     if(sessionStorage.getItem("username")){
-        console.log("existe usuario", ReactSession.get("username"))
+        console.log("existe usuario", sessionStorage.getItem("username"))
         
       }else{redirect("/login")}
   }

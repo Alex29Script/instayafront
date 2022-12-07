@@ -17,8 +17,8 @@ import { Table_guias } from "./Table_guias";
 
 export function ListadoOrdenes() {
   
-  if(ReactSession.get("username")){
-    console.log("existe usuario", ReactSession.get("username"))
+  if(sessionStorage.getItem("username")){
+    console.log("existe usuario", sessionStorage.getItem("username"))
     
   }else{
     window.location.href = "/login"
