@@ -13,7 +13,7 @@ import { FormUpdate } from "./pages/seguimiento/FormUpdate";
 import { Form_for_ghia } from "./pages/Home/Form_for_guia";
 
 export const App = () => {
-  ReactSession.setStoreType("cookie");
+  ReactSession.setStoreType("localStorage");
 
     return (
       <>
