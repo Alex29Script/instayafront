@@ -39,10 +39,6 @@ export const Login = () => {
     if(localStorage.getItem("username")){
         console.log("existe usuario", localStorage.getItem("username"))
         window.location.href = "/listadoOrdenes"
-      }else{
-        window.location.href = "/login"
-        
-      }
   }
   user_verification()
   
