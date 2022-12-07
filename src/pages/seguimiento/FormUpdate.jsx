@@ -31,7 +31,7 @@ export  function  FormUpdate (){
     }
     
       
-    const actualizar_guia=(event)=>{
+    const actualizar_guia=async(event)=>{
         event.preventDefault()
         const guia={};
         guia.username=localStorage.getItem("username")
@@ -58,14 +58,14 @@ export  function  FormUpdate (){
 
         console.log(guia)
         
-        fetch(`${url_server}/guia/actualizar`,{
+        await fetch(`${url_server}/guia/actualizar`,{
             headers:{"Content-Type":"application/json"},
             mode: 'cors',
             method:"post",
             body:JSON.stringify({guia})
             }).then(res=> res.json())
             .then(res=> {console.log(res)})
-            .then(window.location.href = "/listadoOrdenes")
+            .then(res=> {redirect("/listaOrdenes")})
         
     }
 

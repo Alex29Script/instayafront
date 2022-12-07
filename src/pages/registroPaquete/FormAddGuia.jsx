@@ -7,7 +7,7 @@ import { redirect } from "react-router-dom";
 
 export function FormAddGuia(){
     user_verification()
-    const add_guia=(event)=>{
+    const add_guia=async (event)=>{
         event.preventDefault()
         const guia={};
         guia.username=localStorage.getItem("username")
@@ -34,7 +34,7 @@ export function FormAddGuia(){
 
             console.log("guia a registar: ",guia)
         
-        fetch(`${url_server}/guia/agregar`,{
+        await fetch(`${url_server}/guia/agregar`,{
             headers:{"Content-Type":"application/json"},
             mode: 'cors',
             method:"post",
