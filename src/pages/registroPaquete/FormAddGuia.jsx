@@ -41,8 +41,10 @@ export function FormAddGuia(){
             method:"post",
             body:JSON.stringify({guia})
             }).then(res=> res.json())
-            .then(res=> {console.log(res)})
-            .then(window.location.href = "/listadoOrdenes")
+            .then(res=> {console.log(res)
+                window.location.href = "/listadoOrdenes"
+            })
+            
        
         
         }
