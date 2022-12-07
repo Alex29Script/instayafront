@@ -29,6 +29,9 @@ export  function  FormUpdate (){
             })}else{redirect("/login")}
         
     }
+    const redireccionRegistro = () => {
+        redirect("/listadoOrdenes");
+      };
     
       
     const actualizar_guia=async(event)=>{
@@ -58,17 +61,17 @@ export  function  FormUpdate (){
 
         console.log(guia)
         
-        await fetch(`${url_server}/guia/actualizar`,{
+        fetch(`${url_server}/guia/actualizar`,{
             headers:{"Content-Type":"application/json"},
             mode: 'cors',
             method:"post",
             body:JSON.stringify({guia})
             }).then(res=> res.json())
             .then(res=> {console.log(res)})
-            .then(redirect("/listadoOrdenes"))
+            .then(redireccionRegistro())
         
     }
-
+    
    
     
 

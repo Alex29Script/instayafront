@@ -7,6 +7,9 @@ import { redirect } from "react-router-dom";
 
 export function FormAddGuia(){
     user_verification()
+    const redireccionRegistro = () => {
+        redirect("/listadoOrdenes");
+      };
     const add_guia=async (event)=>{
         event.preventDefault()
         const guia={};
@@ -34,14 +37,15 @@ export function FormAddGuia(){
 
             console.log("guia a registar: ",guia)
         
-        await fetch(`${url_server}/guia/agregar`,{
+        fetch(`${url_server}/guia/agregar`,{
             headers:{"Content-Type":"application/json"},
             mode: 'cors',
             method:"post",
             body:JSON.stringify({guia})
             }).then(res=> res.json())
             .then(res=> {console.log(res)})
-        redirect("/listadoOrdenes")
+            .then(redireccionRegistro())
+       
         
         }
        
