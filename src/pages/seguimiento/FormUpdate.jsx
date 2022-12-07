@@ -26,11 +26,11 @@ export  function  FormUpdate (){
                     console.log(res.guias.user_guias.fecha)
                     setXGuias([res.guias.user_guias])
                     
-            })}else{redirect("/login")}
+            })}else{return redirect("/login")}
         
     }
     const redireccionRegistro = () => {
-        redirect("/listadoOrdenes");
+       return redirect("/listadoOrdenes");
       };
     
       
