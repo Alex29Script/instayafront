@@ -6,6 +6,7 @@ import "./Login.css";
 import {ReactSession } from 'react-client-session';
 import NavbarComp from "../../components/NavbarComp/NavbarComp";
 import { url_server } from "../../components/server_backend/conexion";
+import { redirect } from "react-router-dom";
 
 export const Login = () => {
   const iniciarSesion = (e) => {
@@ -24,6 +25,7 @@ export const Login = () => {
       if(res.auth==true){
         console.log("puede iniciar")
         ReactSession.set("username",formulario.username)
+        sessionStorage.setItem("username",formulario.username)
         window.location.href="/listadoOrdenes"
       }else{console.log("no puede iniciar")}
     })    
@@ -33,12 +35,12 @@ export const Login = () => {
   };
 
   const user_verification=()=>{
-    if(ReactSession.get("username")){
+    if(sessionStorage.getItem("username")){
         console.log("existe usuario", ReactSession.get("username"))
-        window.location.href = "/listadoOrdenes"
-      }
+        
+      }else{redirect("/login")}
   }
-//user_verification()
+user_verification()
   return (
     
     
