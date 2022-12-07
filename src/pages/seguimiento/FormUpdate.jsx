@@ -3,7 +3,7 @@ import { url_server } from "../../components/server_backend/conexion";
 import { useLocation } from "react-router-dom";
 import { ReactSession } from 'react-client-session';
 import { NavBarCustomer } from "../../components/NavBarCustomer/NavBarCustome";
-
+import { redirect } from "react-router-dom";
 
 
 export  function  FormUpdate (){
@@ -26,7 +26,7 @@ export  function  FormUpdate (){
                     console.log(res.guias.user_guias.fecha)
                     setXGuias([res.guias.user_guias])
                     
-            })}else{window.location.href = "/login"}
+            })}else{redirect("/login")}
         
     }
     
