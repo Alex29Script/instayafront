@@ -29,9 +29,7 @@ export  function  FormUpdate (){
             })}else{return redirect("/login")}
         
     }
-    const redireccionRegistro = () => {
-       return redirect("/listadoOrdenes");
-      };
+    
     
       
     const actualizar_guia=async(event)=>{
@@ -68,7 +66,7 @@ export  function  FormUpdate (){
             body:JSON.stringify({guia})
             }).then(res=> res.json())
             .then(res=> {console.log(res)})
-            .then(redireccionRegistro())
+            .then(window.location.href = "/listadoOrdenes")
         
     }
     

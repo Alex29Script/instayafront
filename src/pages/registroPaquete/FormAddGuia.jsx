@@ -7,9 +7,7 @@ import { redirect } from "react-router-dom";
 
 export function FormAddGuia(){
     user_verification()
-    const redireccionRegistro = () => {
-        return redirect("/listadoOrdenes");
-      };
+    
     const add_guia=async (event)=>{
         event.preventDefault()
         const guia={};
@@ -44,7 +42,7 @@ export function FormAddGuia(){
             body:JSON.stringify({guia})
             }).then(res=> res.json())
             .then(res=> {console.log(res)})
-            .then(redireccionRegistro())
+            .then(window.location.href = "/listadoOrdenes")
        
         
         }
