@@ -3,13 +3,14 @@ import { url_server } from "../../components/server_backend/conexion";
 import { ReactSession } from 'react-client-session';
 import {user_verification} from "../../components/Auxiliary/Auxiliary"
 import { NavBarCustomer } from "../../components/NavBarCustomer/NavBarCustome";
+import { redirect } from "react-router-dom";
 
 export function FormAddGuia(){
     user_verification()
     const add_guia=(event)=>{
         event.preventDefault()
         const guia={};
-        guia.username=sessionStorage.getItem("username")
+        guia.username=localStorage.getItem("username")
         //guia._id=document.getElementById("id").value;
         guia.nit=document.getElementById("nit").value;
         guia.fecha=document.getElementById("fecha").value;
@@ -40,7 +41,7 @@ export function FormAddGuia(){
             body:JSON.stringify({guia})
             }).then(res=> res.json())
             .then(res=> {console.log(res)})
-            //.then( window.location.href = "/listadoOrdenes")
+            .then(res=>{redirect("/listadoOrdenes")})
         
         }
        

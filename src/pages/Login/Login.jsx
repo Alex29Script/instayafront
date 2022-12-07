@@ -25,7 +25,7 @@ export const Login = () => {
       if(res.auth==true){
         console.log("puede iniciar")
         ReactSession.set("username",formulario.username)
-        sessionStorage.setItem("username",formulario.username)
+        localStorage.setItem("username",formulario.username)
         window.location.href="/listadoOrdenes"
       }else{console.log("no puede iniciar")}
     })    
@@ -35,8 +35,8 @@ export const Login = () => {
   };
 
   const user_verification=()=>{
-    if(sessionStorage.getItem("username")){
-        console.log("existe usuario", sessionStorage.getItem("username"))
+    if(localStorage.getItem("username")){
+        console.log("existe usuario", localStorage.getItem("username"))
         
       }else{redirect("/login")}
   }

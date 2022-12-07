@@ -4,7 +4,7 @@ import { ReactSession } from 'react-client-session';
 
 export function Table_guias(){
     const[Guias, setGuias]=useState([])
-    const username= ReactSession.get("username")
+    const username= localStorage.getItem("username")
     const url_server_fornt="https://instayafront-production.up.railway.app"
     const load_guias=()=>{
         

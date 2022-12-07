@@ -17,8 +17,8 @@ import { Table_guias } from "./Table_guias";
 
 export function ListadoOrdenes() {
   
-  if(sessionStorage.getItem("username")){
-    console.log("existe usuario", sessionStorage.getItem("username"))
+  if(localStorage.getItem("username")){
+    console.log("existe usuario", localStorage.getItem("username"))
     
   }else{
     window.location.href = "/login"

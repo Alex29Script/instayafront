@@ -15,7 +15,7 @@ import { ReactSession } from 'react-client-session';
 
 export const NavBarCustomer=()=>{
     const cerrar_session=()=>{
-        ReactSession.remove("username");
+      localStorage.clear();
         window.location.href = "/"
       }
     return(

@@ -16,7 +16,7 @@ export  function  FormUpdate (){
         
         //http://localhost:8080/guia/buscar/?id_guia=638d6c454b3fe489b2f67f45&username=alex32api
         
-        if(user==sessionStorage.getItem("username")){
+        if(user===localStorage.getItem("username")){
         fetch(`${url_server}/guia/buscar/?username=${user}&id_guia=${guia_unica}`,{
             mode: 'cors',
             method:"get",
@@ -34,7 +34,7 @@ export  function  FormUpdate (){
     const actualizar_guia=(event)=>{
         event.preventDefault()
         const guia={};
-        guia.username=sessionStorage.getItem("username")
+        guia.username=localStorage.getItem("username")
         guia._id=document.getElementById("id").value;
         guia.nit=document.getElementById("nit").value;
         guia.fecha=document.getElementById("fecha").value;
@@ -56,7 +56,7 @@ export  function  FormUpdate (){
             guia.delicado=false
         }
 
-            console.log("guia actualizar: ",guia)
+        console.log(guia)
         
         fetch(`${url_server}/guia/actualizar`,{
             headers:{"Content-Type":"application/json"},
