@@ -40,7 +40,7 @@ export function FormAddGuia(){
             body:JSON.stringify({guia})
             }).then(res=> res.json())
             .then(res=> {console.log(res)})
-            .then( window.location.href = "/listadoOrdenes")
+            //.then( window.location.href = "/listadoOrdenes")
         
         }
        
