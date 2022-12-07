@@ -40,6 +40,7 @@ export const Login = () => {
         console.log("existe usuario", localStorage.getItem("username"))
         window.location.href = "/listadoOrdenes"
   }
+  }
   user_verification()
   
 
