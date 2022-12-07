@@ -65,7 +65,7 @@ export  function  FormUpdate (){
             body:JSON.stringify({guia})
             }).then(res=> res.json())
             .then(res=> {console.log(res)})
-            .then(res=> {redirect("/listaOrdenes")})
+            .then(redirect("/listadoOrdenes"))
         
     }
 

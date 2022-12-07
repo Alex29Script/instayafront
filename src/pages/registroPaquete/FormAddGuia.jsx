@@ -41,7 +41,7 @@ export function FormAddGuia(){
             body:JSON.stringify({guia})
             }).then(res=> res.json())
             .then(res=> {console.log(res)})
-            .then(res=>{redirect("/listadoOrdenes")})
+        redirect("/listadoOrdenes")
         
         }
        
