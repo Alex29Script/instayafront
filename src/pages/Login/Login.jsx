@@ -8,6 +8,7 @@ import NavbarComp from "../../components/NavbarComp/NavbarComp";
 import { url_server } from "../../components/server_backend/conexion";
 import { redirect } from "react-router-dom";
 
+
 export const Login = () => {
   const iniciarSesion = (e) => {
     e.preventDefault();
@@ -37,10 +38,15 @@ export const Login = () => {
   const user_verification=()=>{
     if(localStorage.getItem("username")){
         console.log("existe usuario", localStorage.getItem("username"))
+        window.location.href = "/listadoOrdenes"
+      }else{
+        window.location.href = "/login"
         
-      }else{redirect("/login")}
+      }
   }
-user_verification()
+  user_verification()
+  
+
   return (
     
     
